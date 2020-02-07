@@ -1,7 +1,7 @@
 const colors = {
   accent: "#F3534A",
-  primary: "#0AC4BA",
-  secondary: "#2BDA8E",
+  primary: "#97CD83",
+  secondary: "#97CD83",
   tertiary: "#FFE358",
   black: "#323643",
   white: "#FFFFFF",
@@ -17,7 +17,8 @@ const sizes = {
   padding: 25,
 
   // font sizes
-  h1: 26,
+  h0: 50,
+  h1: 40,
   h2: 20,
   h3: 18,
   title: 18,
@@ -27,6 +28,9 @@ const sizes = {
 };
 
 const fonts = {
+  h0: {
+    fontSize: sizes.h0
+  },
   h1: {
     fontSize: sizes.h1
   },

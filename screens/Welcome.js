@@ -26,6 +26,7 @@ class Welcome extends Component {
   };
 
   renderTermsService() {
+    {/* T & C Page */}
     return (
       <Modal
         animationType="slide"
@@ -164,7 +165,6 @@ class Welcome extends Component {
 
   renderIllustrations() {
     const { illustrations } = this.props;
-
     return (
       <FlatList
         horizontal
@@ -224,27 +224,33 @@ class Welcome extends Component {
     return (
       <Block>
         <Block center bottom flex={0.4}>
-          <Text h1 center bold>
-            Your Home.
-            <Text h1 primary>
-              {" "}
-              Greener.
+            <Text h0 primary center bold>
+              Feat
+              <Text h2 center bold>
+              {" "} Food. Fit.
             </Text>
           </Text>
-          <Text h3 gray2 style={{ marginTop: theme.sizes.padding / 2 }}>
-            Enjoy the experience.
+          
+          <Text h4 gray2 style={{ marginTop: theme.sizes.padding / 2.5}}>
+            Healthy living at your fingertips
           </Text>
         </Block>
         <Block center middle>
           {this.renderIllustrations()}
           {this.renderSteps()}
         </Block>
+
+
+       {/* HOMEPAGE PRE LOGIN AND SIGN UP  */}
+
+
         <Block middle flex={0.5} margin={[0, theme.sizes.padding * 2]}>
           <Button gradient onPress={() => navigation.navigate("Login")}>
             <Text center semibold white>
               Login
             </Text>
           </Button>
+          {/* Add facebook login icon? */}
           <Button shadow onPress={() => navigation.navigate("SignUp")}>
             <Text center semibold>
               Signup
@@ -264,9 +270,9 @@ class Welcome extends Component {
 
 Welcome.defaultProps = {
   illustrations: [
-    { id: 1, source: require("../assets/images/illustration_1.png") },
-    { id: 2, source: require("../assets/images/illustration_2.png") },
-    { id: 3, source: require("../assets/images/illustration_3.png") }
+    { id: 1, source: require("../assets/images/icon_1.png") },
+    { id: 2, source: require("../assets/images/icon_2.png") },
+    { id: 3, source: require("../assets/images/icon_3.png") }
   ]
 };
 

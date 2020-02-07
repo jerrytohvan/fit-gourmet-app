@@ -7,6 +7,7 @@ import { theme } from "../constants";
 export default class Typography extends Component {
   render() {
     const {
+      h0,
       h1,
       h2,
       h3,
@@ -45,6 +46,7 @@ export default class Typography extends Component {
 
     const textStyles = [
       styles.text,
+      h0 && styles.h0,
       h1 && styles.h1,
       h2 && styles.h2,
       h3 && styles.h3,
@@ -122,6 +124,7 @@ const styles = StyleSheet.create({
   gray: { color: theme.colors.gray },
   gray2: { color: theme.colors.gray2 },
   // fonts
+  h0: theme.fonts.h0,
   h1: theme.fonts.h1,
   h2: theme.fonts.h2,
   h3: theme.fonts.h3,

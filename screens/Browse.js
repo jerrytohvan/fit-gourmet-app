@@ -22,7 +22,7 @@ class Browse extends Component {
   };
   static navigationOptions = {
     header: null
-  }
+    }
 
 
   componentDidMount() {
@@ -63,13 +63,7 @@ class Browse extends Component {
           Test
         </Text>
       </Block>
-  //  <View style={{ flexDirection: "row", height: 50, justifyContent: "space-evenly", alignItems: "center", width: "100%" }}>
-  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("Explore")}><Text>1</Text></TouchableOpacity>
-  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen2")}><Text>2</Text></TouchableOpacity>
-  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen3")}><Text>3</Text></TouchableOpacity>
-  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen4")}><Text>4</Text></TouchableOpacity>
-  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen5")}><Text>5</Text></TouchableOpacity>
-  // </View>
+
 )
   }
 
@@ -136,9 +130,8 @@ class Browse extends Component {
         </ScrollView>
        
 
-       {/* Menu Control  */}
-       {this.renderMenu()}
-
+       {/* Menu Control }
+       {this.renderMenu() */}
 
       </Block>
     );

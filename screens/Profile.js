@@ -15,4 +15,4 @@ class Profile extends Component {
     }
 }
 
-export {Profile};
+export default Profile;

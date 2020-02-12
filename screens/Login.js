@@ -43,7 +43,7 @@ export default class Login extends Component {
 
     //IF NO ERROR MOVE TO PAGE
     if (!errors.length) {
-      navigation.navigate("Browse");
+      navigation.navigate("TabsNavigator");
       // navigation.navigate("List");
     }
   }

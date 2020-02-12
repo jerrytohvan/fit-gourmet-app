@@ -15,4 +15,4 @@ class Private extends Component {
     }
 }
 
-export {Private};
+export default Private;

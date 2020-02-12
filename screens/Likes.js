@@ -15,4 +15,4 @@ class Likes extends Component {
     }
 }
 
-export {Likes};
+export default Likes;

@@ -28,4 +28,4 @@ class Bookmarks extends Component {
     }
 }
 
-export {Bookmarks};
+export default Bookmarks;

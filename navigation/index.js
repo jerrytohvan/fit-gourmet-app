@@ -8,9 +8,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {MultiBar, MultiBarToggle} from 'react-native-multibar';
 
 
-import {Routes} from "./Routes";
-
-
 import Welcome from "../screens/Welcome";
 import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
@@ -21,7 +18,11 @@ import Product from "../screens/Product";
 import Settings from "../screens/Settings";
 import List from '../screens/List';
 import Article from '../screens/Article';
-import {Bookmarks, Likes, Private, Profile} from "../screens";
+import Bookmarks from '../screens/Bookmarks';
+import Likes from '../screens/Likes';
+import Private from '../screens/Private';
+import Profile from '../screens/Profile';
+
 
 import { theme } from "../constants";
 
@@ -67,7 +68,7 @@ import { theme } from "../constants";
 
 
 const TabsNavigator = createBottomTabNavigator({
-  [Routes.TabsHome]: {
+  Browse: {
       screen: Browse,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
@@ -79,7 +80,7 @@ const TabsNavigator = createBottomTabNavigator({
           )
       })
   },
-  [Routes.TabsLikes]: {
+  Likes: {
       screen: Likes,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
@@ -100,7 +101,7 @@ const TabsNavigator = createBottomTabNavigator({
                   actionSize={30}
                   routes={[
                       {
-                          routeName: Routes.OtherScreen,
+                          routeName: 'OTHER_SCREEN',
                           color: '#FF8360',
                           icon: (
                               <Icon
@@ -111,7 +112,7 @@ const TabsNavigator = createBottomTabNavigator({
                           )
                       },
                       {
-                          routeName: Routes.OtherScreen,
+                          routeName: 'OTHER_SCREEN',
                           color: '#E8E288',
                           icon: (
                               <Icon
@@ -122,7 +123,7 @@ const TabsNavigator = createBottomTabNavigator({
                           )
                       },
                       {
-                          routeName: Routes.OtherScreen,
+                          routeName: 'OTHER_SCREEN',
                           color: '#7DCE82',
                           icon: (
                               <Icon
@@ -147,8 +148,8 @@ const TabsNavigator = createBottomTabNavigator({
           navigationDisabled: true
       }
   },
-  [Routes.TabsPrivate]: {
-      screen: Private,
+  Bookmarks: {
+      screen: Bookmarks,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon
@@ -159,7 +160,7 @@ const TabsNavigator = createBottomTabNavigator({
           )
       })
   },
-  [Routes.TabsProfile]: {
+  Profile: {
       screen: Profile,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
@@ -185,9 +186,7 @@ const TabsNavigator = createBottomTabNavigator({
 });
 
 const BaseNavigatorContainer = createAppContainer(createStackNavigator({
-  [Routes.Tabs]: TabsNavigator,
-  [Routes.OtherScreen]: Settings,
-  Welcome,
+    Welcome,
     Login,
     SignUp,
     Forgot,
@@ -196,10 +195,20 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
     Product,
     Settings,
     List,
-    Article
+    Article,
+    Bookmarks,
+    Likes,
+    Private,
+    Profile,
+    Private,
+    TabsNavigator
+    
 }, {
   // headerMode: 'none'
     defaultNavigationOptions: {
+        //disabling headers through `TabNavigation`
+            header: null,
+
             headerStyle: {
               height: theme.sizes.base * 4,
               backgroundColor: theme.colors.white, // or 'white
@@ -221,6 +230,5 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
 }
 ));
 
-export * from './Routes';
 export default BaseNavigatorContainer;
 // export {BaseNavigatorContainer as BaseNavigator};

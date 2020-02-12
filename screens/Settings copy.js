@@ -15,4 +15,4 @@ class Settings extends Component {
     }
 }
 
-export {Settings};
+export default Settings;

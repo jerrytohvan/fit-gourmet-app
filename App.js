@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { AppLoading } from "expo";
 import { Asset } from "expo-asset";
 
 import Navigation from "./navigation";
 import { Block } from "./components";
+
 
 // import all used images
 const images = [
@@ -67,3 +68,20 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({});
+
+
+// import React from 'react';
+// import { View } from 'react-native';
+
+// import { Navigation } from './src/navigation';
+
+// export default function App() {
+//   return (
+//     <View style={{
+//       flex: 1,
+//       backgroundColor: '#293656'
+//     }}>
+//       <BaseNavigator/>
+//     </View>
+//   );
+// }

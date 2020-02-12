@@ -250,7 +250,7 @@ class Welcome extends Component {
               Login
             </Text>
           </Button>
-          {/* Add facebook login icon? */}
+          {/* Add facebook login icon? https://developers.facebook.com/docs/react-native/login/ */}
           <Button shadow onPress={() => navigation.navigate("SignUp")}>
             <Text center semibold>
               Signup

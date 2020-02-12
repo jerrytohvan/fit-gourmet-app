@@ -9,6 +9,15 @@ const colors = {
   gray2: "#C5CCD6"
 };
 
+const colors_home = {
+  black: '#000',
+  white: '#FFF',
+  gray: '#DCE0E9',
+  caption: '#BCCCD4',
+  active: '#007BFA',
+};
+
+
 const sizes = {
   // global sizes
   base: 16,
@@ -25,6 +34,16 @@ const sizes = {
   header: 16,
   body: 14,
   caption: 12
+};
+
+const sizes_home = {
+  base: 16,
+  font: 14,
+  padding: 36,
+  margin: 36,
+  title: 24,
+  border: 16,
+  radius: 12,
 };
 
 const fonts = {
@@ -54,4 +73,4 @@ const fonts = {
   }
 };
 
-export { colors, sizes, fonts };
+export { colors,colors_home, sizes, sizes_home, fonts };

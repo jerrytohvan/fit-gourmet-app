@@ -4,19 +4,26 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 } from "react-native";
 
 import { Card, Badge, Button, Block, Text } from "../components";
 import { theme, mocks } from "../constants";
+
 
 const { width } = Dimensions.get("window");
 
 class Browse extends Component {
   state = {
     active: "Products",
+    // active: "Healthy Living",
     categories: []
   };
+  static navigationOptions = {
+    header: null
+  }
+
 
   componentDidMount() {
     this.setState({ categories: this.props.categories });
@@ -30,6 +37,7 @@ class Browse extends Component {
 
     this.setState({ active: tab, categories: filtered });
   };
+
 
   renderTab(tab) {
     const { active } = this.state;
@@ -48,25 +56,54 @@ class Browse extends Component {
     );
   }
 
+  renderMenu(){
+    return ( 
+      <Block>
+        <Text>
+          Test
+        </Text>
+      </Block>
+  //  <View style={{ flexDirection: "row", height: 50, justifyContent: "space-evenly", alignItems: "center", width: "100%" }}>
+  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("Explore")}><Text>1</Text></TouchableOpacity>
+  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen2")}><Text>2</Text></TouchableOpacity>
+  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen3")}><Text>3</Text></TouchableOpacity>
+  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen4")}><Text>4</Text></TouchableOpacity>
+  //   <TouchableOpacity onPress={() => this.props.navigation.navigate("screen5")}><Text>5</Text></TouchableOpacity>
+  // </View>
+)
+  }
+
+
   render() {
+    
     const { profile, navigation } = this.props;
     const { categories } = this.state;
     const tabs = ["Products", "Inspirations", "Shop"];
+   // const tabs = ["Healthy Living", "Indulge", "Inspirations", "Favorites"];
 
     return (
-      <Block>
+     
+      <Block marginTop={theme.sizes.base * 5}>
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
-            Browse
+           {/* CHANGE USER NAME HERE */}
+            Hello {"John"}
           </Text>
           <Button onPress={() => navigation.navigate("Settings")}>
+            {/* CHANGE USER DP HERE */}
             <Image source={profile.avatar} style={styles.avatar} />
           </Button>
         </Block>
 
+            {/* RECOMMENDATION BAR */}
+
+
+
+            {/* CATEGORIES TAB */}
         <Block flex={false} row style={styles.tabs}>
           {tabs.map(tab => this.renderTab(tab))}
         </Block>
+
 
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -97,6 +134,12 @@ class Browse extends Component {
             ))}
           </Block>
         </ScrollView>
+       
+
+       {/* Menu Control  */}
+       {this.renderMenu()}
+
+
       </Block>
     );
   }
@@ -109,7 +152,9 @@ Browse.defaultProps = {
 
 export default Browse;
 
+
 const styles = StyleSheet.create({
+  
   header: {
     paddingHorizontal: theme.sizes.base * 2
   },

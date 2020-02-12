@@ -9,6 +9,7 @@ import {
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
+// Get from DB 
 const VALID_EMAIL = "contact@react-ui-kit.com";
 const VALID_PASSWORD = "subscribe";
 
@@ -20,6 +21,8 @@ export default class Login extends Component {
     loading: false
   };
 
+
+  //RUN ASYNC REQUEST TO DB END.
   handleLogin() {
     const { navigation } = this.props;
     const { email, password } = this.state;
@@ -38,8 +41,10 @@ export default class Login extends Component {
 
     this.setState({ errors, loading: false });
 
+    //IF NO ERROR MOVE TO PAGE
     if (!errors.length) {
       navigation.navigate("Browse");
+      // navigation.navigate("List");
     }
   }
 

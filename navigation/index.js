@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, PixelRatio } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -26,45 +26,9 @@ import Profile from '../screens/Profile';
 
 import { theme } from "../constants";
 
-
-// const screens = createStackNavigator(
-//   {
-//     Welcome,
-//     Login,
-//     SignUp,
-//     Forgot,
-//     Explore,
-//     Browse,
-//     Product,
-//     Settings,
-//     List,
-//     Article
-//   },
-//   {
-//     defaultNavigationOptions: {
-//       headerStyle: {
-//         height: theme.sizes.base * 4,
-//         backgroundColor: theme.colors.white, // or 'white
-//         borderBottomColor: "transparent",
-//         elevation: 0 // for android
-//       },
-//       headerBackImage: <Image source={require("../assets/icons/back.png")} />,
-//       headerBackTitle: null,
-//       headerLeftContainerStyle: {
-//         alignItems: "center",
-//         marginLeft: theme.sizes.base * 2,
-//         paddingRight: theme.sizes.base
-//       },
-//       headerRightContainerStyle: {
-//         alignItems: "center",
-//         paddingRight: theme.sizes.base
-//       }
-//     }
-//   }
-// );
-
-
-// export default createAppContainer(screens);
+//Change default property of the multibartoggle props
+//#F4FEC1, #476A6F
+MultiBarToggle.defaultProps.toggleColor = "#476A6F";
 
 
 const TabsNavigator = createBottomTabNavigator({
@@ -136,8 +100,9 @@ const TabsNavigator = createBottomTabNavigator({
                   ]}
                   icon={(
                       <Icon
-                          name="plus"
-                          color="#FFFFFF"
+                      //Change Props icon here, //envira
+                          name="leaf"
+                          color="#F4FEC1"
                           size={24}
                       />
                   )}
@@ -145,7 +110,7 @@ const TabsNavigator = createBottomTabNavigator({
           )
       }),
       params: {
-          navigationDisabled: true
+          navigationDisabled: false
       }
   },
   Bookmarks: {
@@ -176,12 +141,15 @@ const TabsNavigator = createBottomTabNavigator({
   tabBarComponent: MultiBar,
   tabBarOptions: {
       showLabel: false,
-      activeTintColor: '#F8F8F8',
+      activeTintColor: theme.colors.primary,
       inactiveTintColor: '#586589',
       style: {
-          backgroundColor: '#171F33'
+          backgroundColor: '#FFFFFF',
+          height: PixelRatio.getPixelSizeForLayoutSize(27), 
       },
-      tabStyle: {}
+      tabStyle: {
+            
+      }
   }
 });
 

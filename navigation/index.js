@@ -186,8 +186,35 @@ const TabsNavigator = createBottomTabNavigator({
 });
 
 const BaseNavigatorContainer = createAppContainer(createStackNavigator({
-    Welcome,
-    Login,
+    Welcome:{
+        screen: Welcome,
+        navigationOptions: {
+            headerBackTitle: null,
+        }
+                    
+    },
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            headerStyle: {
+                height: theme.sizes.base * 4,
+                backgroundColor: theme.colors.white, // or 'white
+                borderBottomColor: "transparent",
+                elevation: 0 // for android
+            },
+            headerBackImage: <Image source={require("../assets/icons/back.png")} />,
+            headerBackTitle: null,
+            headerLeftContainerStyle: {
+                alignItems: "center",
+                marginLeft: theme.sizes.base * 2,
+                paddingRight: theme.sizes.base
+            },
+            headerRightContainerStyle: {
+                alignItems: "center",
+                paddingRight: theme.sizes.base
+            }
+        }
+    },
     SignUp,
     Forgot,
     Explore,
@@ -201,32 +228,19 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
     Private,
     Profile,
     Private,
-    TabsNavigator
+    TabsNavigator:{
+        screen: TabsNavigator,
+        navigationOptions: {
+            header: null
+        }
+    }
     
 }, {
-  // headerMode: 'none'
-    defaultNavigationOptions: {
+  headerMode: 'screen'
+    // defaultNavigationOptions: {
         //disabling headers through `TabNavigation`
-            header: null,
-
-            headerStyle: {
-              height: theme.sizes.base * 4,
-              backgroundColor: theme.colors.white, // or 'white
-              borderBottomColor: "transparent",
-              elevation: 0 // for android
-            },
-            headerBackImage: <Image source={require("../assets/icons/back.png")} />,
-            headerBackTitle: null,
-            headerLeftContainerStyle: {
-              alignItems: "center",
-              marginLeft: theme.sizes.base * 2,
-              paddingRight: theme.sizes.base
-            },
-            headerRightContainerStyle: {
-              alignItems: "center",
-              paddingRight: theme.sizes.base
-            }
-  }
+         
+//   }
 }
 ));
 

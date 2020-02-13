@@ -21,7 +21,6 @@ export default class Login extends Component {
     loading: false
   };
 
-
   //RUN ASYNC REQUEST TO DB END.
   handleLogin() {
     const { navigation } = this.props;
@@ -30,6 +29,8 @@ export default class Login extends Component {
 
     Keyboard.dismiss();
     this.setState({ loading: true });
+
+    
 
     // check with backend API or with some static data
     if (email !== VALID_EMAIL) {

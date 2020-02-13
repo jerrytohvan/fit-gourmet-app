@@ -4,9 +4,7 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-  TouchableOpacity,
-  View
-} from "react-native";
+  TouchableOpacity} from "react-native";
 
 import { Card, Badge, Button, Block, Text } from "../components";
 import { theme, mocks } from "../constants";
@@ -20,10 +18,7 @@ class Browse extends Component {
     // active: "Healthy Living",
     categories: []
   };
-  static navigationOptions = {
-    header: null
-    }
-
+  
 
   componentDidMount() {
     this.setState({ categories: this.props.categories });

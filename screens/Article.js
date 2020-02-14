@@ -7,7 +7,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { theme } from "../constants";
 
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   flex: {
@@ -106,31 +106,31 @@ class Article extends Component {
       headerTransparent: true,
     }
   }
-
-  renderDots = () => {
-    const { navigation } = this.props;
-    const article = navigation.getParam('article');
+  
+  renderDots() {
+    const { destinations } = this.props;
     const dotPosition = Animated.divide(this.scrollX, width);
-
     return (
-      <View style={[ styles.flex, styles.row, styles.dotsContainer ]}>
-        {article.images.map((item, index) => {
-          const opacity = dotPosition.interpolate({
-            inputRange: [index - 1, index, index + 1],
-            outputRange: [0.5, 1, 0.5],
+      <View style={[
+        styles.flex, styles.row,
+        { justifyContent: 'center', alignItems: 'center', marginTop: (theme.sizes_home.margin * 2) }
+      ]}>
+        {destinations.map((item, index) => {
+          const borderWidth = dotPosition.interpolate({
+            inputRange: [index -1, index, index + 1],
+            outputRange: [0, 2.5, 0],
             extrapolate: 'clamp'
           });
           return (
             <Animated.View
-              key={`step-${item}-${index}`}
-              style={[styles.dots, { opacity }]}
+              key={`step-${item.id}`}
+              style={[styles.dots, styles.activeDot, { borderWidth: borderWidth } ]}
             />
           )
         })}
       </View>
     )
   }
-
   renderRatings = (rating) => {
     const stars = new Array(5).fill(0);
     return (

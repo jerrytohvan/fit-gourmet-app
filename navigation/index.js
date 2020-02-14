@@ -16,15 +16,16 @@ import Explore from "../screens/Explore";
 import Browse from "../screens/Browse";
 import Product from "../screens/Product";
 import Settings from "../screens/Settings";
-import List from '../screens/List';
-import Article from '../screens/Article';
 import Bookmarks from '../screens/Bookmarks';
 import Likes from '../screens/Likes';
 import Private from '../screens/Private';
 import Profile from '../screens/Profile';
+import Article from '../screens/Article';
+import List from '../screens/List';
 
 
 import { theme } from "../constants";
+
 
 //Change default property of the multibartoggle props
 //#F4FEC1, #476A6F
@@ -44,8 +45,8 @@ const TabsNavigator = createBottomTabNavigator({
           )
       })
   },
-  Likes: {
-      screen: Likes,
+  List: {
+      screen: List,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon
@@ -190,7 +191,6 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
     Product,
     Settings,
     List,
-    Article,
     Bookmarks,
     Likes,
     Private,

@@ -100,7 +100,7 @@ const mocks = [
 ]
 const styles = StyleSheet.create({
   flex: {
-    flex: 1,
+    flex: 0,
   },
   column: {
     flexDirection: 'column'

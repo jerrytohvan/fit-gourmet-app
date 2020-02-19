@@ -45,8 +45,8 @@ const TabsNavigator = createBottomTabNavigator({
           )
       })
   },
-  List: {
-      screen: List,
+  Likes: {
+      screen: Likes,
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon

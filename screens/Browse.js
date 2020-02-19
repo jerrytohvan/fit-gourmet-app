@@ -24,8 +24,7 @@ const { width } = Dimensions.get("window");
 
 class Browse extends Component {
   state = {
-    active: "Products",
-    // active: "Healthy Living",
+    active: "Healthy",
     categories: []
   };
   
@@ -71,31 +70,6 @@ class Browse extends Component {
 
     )
   }
-
-  // renderDots() {
-  //   const { destinations } = this.props;
-  //   const dotPosition = Animated.divide(this.scrollX, width);
-  //   return (
-  //     <View style={[
-  //       styles.flex, styles.row,
-  //       { justifyContent: 'center', alignItems: 'center', marginTop: (theme.sizes_home.margin * 2) }
-  //     ]}>
-  //       {destinations.map((item, index) => {
-  //         const borderWidth = dotPosition.interpolate({
-  //           inputRange: [index -1, index, index + 1],
-  //           outputRange: [0, 2.5, 0],
-  //           extrapolate: 'clamp'
-  //         });
-  //         return (
-  //           <Animated.View
-  //             key={`step-${item.id}`}
-  //             style={[styles.dots, styles.activeDot, { borderWidth: borderWidth } ]}
-  //           />
-  //         )
-  //       })}
-  //     </View>
-  //   )
-  // }
 
 
   renderDestinations = () => {
@@ -175,8 +149,8 @@ class Browse extends Component {
     
     const { profile, navigation } = this.props;
     const { categories } = this.state;
-    const tabs = ["Products", "Inspirations", "Shop"];
-   // const tabs = ["Healthy Living", "Indulge", "Inspirations", "Favorites"];
+    // const tabs = ["Products", "Inspirations", "Shop"];
+   const tabs = ["Healthy", "Inspirations", "Indulge"];
 
 
 
@@ -239,7 +213,7 @@ class Browse extends Component {
                     {category.name}
                   </Text>
                   <Text gray caption>
-                    {category.count} products
+                    {category.count} recipes
                   </Text>
                 </Card>
               </TouchableOpacity>

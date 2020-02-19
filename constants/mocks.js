@@ -1,45 +1,31 @@
 const categories = [
   {
-    id: "plants",
-    name: "Plants",
-    tags: ["products", "inspirations"],
+    id: "japanese",
+    name: "Japanese",
+    tags: ["healthy", "indulge","inspirations"],
     count: 147,
-    image: require("../assets/icons/plants.png")
+    image: require("../assets/icons/japanese.png")
   },
   {
-    id: "seeds",
-    name: "Seeds",
-    tags: ["products", "shop"],
+    id: "fruits",
+    name: "Fruits",
+    tags: ["healthy"],
     count: 16,
-    image: require("../assets/icons/seeds.png")
+    image: require("../assets/icons/fruit.png")
   },
   {
-    id: "flowers",
-    name: "Flowers",
-    tags: ["products", "inspirations"],
-    count: 68,
-    image: require("../assets/icons/flowers.png")
+    id: "salads",
+    name: "Salads",
+    tags: ["healthy", "indulge"],
+    count: 54,
+    image: require("../assets/icons/salad.png")
   },
   {
-    id: "sprayers",
-    name: "Sprayers",
-    tags: ["products", "shop"],
+    id: "noodles",
+    name: "Noodles",
+    tags: ["indulge", "inspirations"],
     count: 17,
-    image: require("../assets/icons/sprayers.png")
-  },
-  {
-    id: "pots",
-    name: "Pots",
-    tags: ["products", "shop"],
-    count: 47,
-    image: require("../assets/icons/pots.png")
-  },
-  {
-    id: "fertilizers",
-    name: "fertilizers",
-    tags: ["products", "shop"],
-    count: 47,
-    image: require("../assets/icons/fertilizers.png")
+    image: require("../assets/icons/noodles.png")
   }
 ];
 
@@ -88,83 +74,42 @@ const profile = {
 
 
 const recipes = [
-  {
-    id: 1,
-    user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    {
+      id: 1,
+      user: {
+        name: 'Gordon Ramsay',
+        avatar: 'https://yt3.ggpht.com/a/AGF-l7_6r_NR0iZWw6Tm_eDIiYy35mIUoPqKPUCfgw=s900-c-k-c0xffffffff-no-rj-mo',
+      },
+      saved: true,
+      location: 'Western, Pescetarian',
+      temperature: 34,
+      title: 'Grilled Salmon with Garlic Mushroom and Lentil Salad',
+      description: 'This is the best grilled salmon recipe! The marinade makes the fish so flavorful and it’s ridiculously easy to make! It’s going to become your go-to salmon recipe!',
+      rating: 4.6,
+      reviews: 231,
+      preview: 'https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-GRILLED-SALMON-WITH-GARLIC-MUSHROOM-AND-LENTIL-SALAD.png',
+      images: [
+        'https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-GRILLED-SALMON-WITH-GARLIC-MUSHROOM-AND-LENTIL-SALAD.png',
+  
+      ]
     },
-    saved: true,
-    location: 'Santorini, Greece',
-    temperature: 34,
-    title: 'Santorini',
-    description: 'Santorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater). They overlook the sea, small islands to the west and beaches made up of black, red and white lava pebbles.',
-    rating: 4.3,
-    reviews: 3212,
-    preview: 'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-    ]
-  },
-  {
+    {
     id: 2,
     user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-    },
-    saved: false,
-    location: 'Loutraki, Greece',
-    temperature: 34,
-    title: 'Loutraki',
-    description: 'This attractive small town, 80 kilometers from Athens',
-    rating: 4.6,
-    reviews: 3212,
-    preview: 'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
-    ]
-  },
-  {
-    id: 3,
-    user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'Jamie Oliver',
+      avatar: 'https://food.konbini.com/files/2016/07/jo2-1-810x810.jpg',
     },
     saved: true,
-    location: 'Santorini, Greece',
+    location: 'Italian, Pescetarian',
     temperature: 34,
-    title: 'Santorini',
-    description: 'Santorini - Description',
-    rating: 3.2,
-    reviews: 3212,
-    preview: 'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+    title: 'Seafood risotto',
+    description: 'Perfect for the weekend, this amazing risotto will blow everyone away. Slow-roasting the tomatoes transforms them into incredibly sweet, vibrant bombs of goodness that will explode in your mouth, while the combination of delicate seafood is a real treat. An utterly decadent dish, but totally worth it.',
+    rating: 4.3,
+    reviews: 12,
+    preview: 'https://thesauce.atbbq.com/wp-content/uploads/2017/08/cooking-with-fire-seafood-risotto-recipe.jpg',
     images: [
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-    ]
-  },
-  {
-    id: 4,
-    user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-    },
-    location: 'Loutraki, Greece',
-    temperature: 34,
-    title: 'Loutraki',
-    description: 'This attractive small town, 80 kilometers from Athens',
-    rating: 5,
-    reviews: 3212,
-    preview: 'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
+      'https://thesauce.atbbq.com/wp-content/uploads/2017/08/cooking-with-fire-seafood-risotto-recipe.jpg',
+
     ]
   },
 ]

@@ -2,28 +2,28 @@ const categories = [
   {
     id: "japanese",
     name: "Japanese",
-    tags: ["healthy", "indulge","inspirations"],
+    tags: ["all","healthy", "indulge","inspirations"],
     count: 147,
     image: require("../assets/icons/japanese.png")
   },
   {
     id: "fruits",
     name: "Fruits",
-    tags: ["healthy"],
+    tags: ["all","healthy"],
     count: 16,
     image: require("../assets/icons/fruit.png")
   },
   {
     id: "salads",
     name: "Salads",
-    tags: ["healthy", "indulge"],
+    tags: ["all","healthy", "indulge"],
     count: 54,
     image: require("../assets/icons/salad.png")
   },
   {
     id: "noodles",
     name: "Noodles",
-    tags: ["indulge", "inspirations"],
+    tags: ["all","indulge", "inspirations"],
     count: 17,
     image: require("../assets/icons/noodles.png")
   }

@@ -184,7 +184,28 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
             }
         }
     },
-    SignUp,
+    SignUp: {
+        screen: SignUp,
+        navigationOptions: {
+            headerStyle: {
+                height: theme.sizes.base * 4,
+                backgroundColor: theme.colors.white, // or 'white
+                borderBottomColor: "transparent",
+                elevation: 0 // for android
+            },
+            headerBackImage: <Image source={require("../assets/icons/back.png")} />,
+            headerBackTitle: null,
+            headerLeftContainerStyle: {
+                alignItems: "center",
+                marginLeft: theme.sizes.base * 2,
+                paddingRight: theme.sizes.base
+            },
+            headerRightContainerStyle: {
+                alignItems: "center",
+                paddingRight: theme.sizes.base
+            }
+        }
+    },
     Forgot,
     Explore,
     Browse,

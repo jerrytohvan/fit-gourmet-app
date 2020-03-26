@@ -24,7 +24,7 @@ const { width } = Dimensions.get("window");
 
 class Browse extends Component {
   state = {
-    active: "Healthy",
+    active: "All",
     categories: []
   };
   
@@ -150,13 +150,12 @@ class Browse extends Component {
     const { profile, navigation } = this.props;
     const { categories } = this.state;
     // const tabs = ["Products", "Inspirations", "Shop"];
-   const tabs = ["Healthy", "Inspirations", "Indulge"];
-
-
+    const tabs = ["All", "Healthy", "Inspirations", "Indulge"];
 
     return (
      
       <Block marginTop={theme.sizes.base * 5}>
+        <ScrollView>
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
            {/* CHANGE USER NAME HERE */}
@@ -190,11 +189,11 @@ class Browse extends Component {
           {tabs.map(tab => this.renderTab(tab))}
         </Block>
 
-
-        <ScrollView
+{/* Change Scrollview for overall screen, this can be changed to a block */}
+        {/* <ScrollView
           showsVerticalScrollIndicator={false}
           style={{ paddingVertical: theme.sizes.base * 2 }}
-        >
+        > */}
           <Block flex={false} row space="between" style={styles.categories}>
             {categories.map(category => (
               <TouchableOpacity
@@ -291,7 +290,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: theme.colors_home.white,
     paddingHorizontal: theme.sizes_home.padding,
-    paddingTop: theme.sizes_home.padding * 1.33,
+    paddingTop: theme.sizes_home.padding *0.4,
     paddingBottom: theme.sizes_home.padding * 0.66,
     justifyContent: 'space-between',
     alignItems: 'center',

@@ -15,10 +15,12 @@ import { theme, mocks } from "../constants";
 
 const { width, height } = Dimensions.get("window");
 
-class Explore extends Component {
+export default class Explore extends Component {
+
   state = {
     searchFocus: new Animated.Value(0.6),
-    searchString: null
+    searchString: null,
+    loading: false
   };
 
   handleSearchFocus(status) {
@@ -115,11 +117,12 @@ class Explore extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
     return (
       <Block>
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
-            Explore
+            {navigation.state.params.cat.name}
           </Text>
           {this.renderSearch()}
         </Block>
@@ -137,8 +140,6 @@ class Explore extends Component {
 Explore.defaultProps = {
   images: mocks.explore
 };
-
-export default Explore;
 
 const styles = StyleSheet.create({
   header: {

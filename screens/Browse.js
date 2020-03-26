@@ -149,13 +149,15 @@ class Browse extends Component {
     
     const { profile, navigation } = this.props;
     const { categories } = this.state;
-    // const tabs = ["Products", "Inspirations", "Shop"];
     const tabs = ["All", "Healthy", "Inspirations", "Indulge"];
 
     return (
      
       <Block marginTop={theme.sizes.base * 5}>
-        <ScrollView>
+        <ScrollView
+           showsVerticalScrollIndicator={false}
+           style={{ paddingVertical: theme.sizes.base * 2 }}
+        >
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
            {/* CHANGE USER NAME HERE */}
@@ -189,16 +191,11 @@ class Browse extends Component {
           {tabs.map(tab => this.renderTab(tab))}
         </Block>
 
-{/* Change Scrollview for overall screen, this can be changed to a block */}
-        {/* <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={{ paddingVertical: theme.sizes.base * 2 }}
-        > */}
           <Block flex={false} row space="between" style={styles.categories}>
             {categories.map(category => (
               <TouchableOpacity
                 key={category.name}
-                onPress={() => navigation.navigate("Explore", { category })}
+                onPress={() => navigation.navigate("Explore", { cat: category })}
               >
                 <Card center middle shadow style={styles.category}>
                   <Badge

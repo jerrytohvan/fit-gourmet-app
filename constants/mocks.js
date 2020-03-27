@@ -29,31 +29,32 @@ const categories = [
   }
 ];
 
+//https://www.loveandlemons.com/sesame-soba-noodles/
 const products = [
   {
     id: 1,
-    name: "16 Best Plants That Thrive In Your Bedroom",
-    description:
-      "Bedrooms deserve to be decorated with lush greenery just like every other room in the house – but it can be tricky to find a plant that thrives here. Low light, high humidity and warm temperatures mean only certain houseplants will flourish.",
-    tags: ["Interior", "27 m²", "Ideas"],
+    name: "Japanese Sesame Soba Noodles",
+    instructions:
+     "1. Make the dressing: In a small bowl, combine the vinegar, tamari, sesame oil, ginger, garlic, and honey. Set aside. \n2. Bring an unsalted pot of water to a boil and cook the soba noodles according to package directions. Drain and rinse well in cold water. This helps to remove starches that cause clumping. Toss the noodles with the dressing and divide into 2 to 4 bowls. Squeeze fresh lemon juice onto the avocado slices and add to the bowls along with the snap peas, edamame, radish, mint, and sprinkle with sesame seeds. Drizzle with more tamari or sesame oil, if desired.\n\n",
+     ingredients:
+     "• Sesame Dressing \n• ¼ cup rice vinegar\n• 2 tablespoons tamari, more for serving\n• ½ teaspoon toasted sesame oil\n• 1 teaspoon grated ginger\n• 1 garlic clove, grated\n• ½ teaspoon maple syrup or honey\n\n For the Soba Noodles:\n• 6 ounces soba noodles*, see note\n• Sesame oil, for drizzling\n• 2 avocados, sliced\n• Squeezes of lemon\n• 2 cups blanched snap peas \n• ¼ cup edamame \n• 1 watermelon radish or 2 red radishes, very thinly sliced\n• /4 cup fresh mint leaves \n•  Sesame seeds",
+         tags: ["Japanese", "Healthy", "30 minutes"],
     images: [
-      require("../assets/images/plants_1.png"),
-      require("../assets/images/plants_2.png"),
-      require("../assets/images/plants_3.png"),
+      require("../assets/images/foods/japan/soba-noodles.jpg"),
+      require("../assets/images/foods/japan/recipe-1/1.jpg"),
+      require("../assets/images/foods/japan/recipe-1/2.jpg"),
       // showing only 3 images, show +6 for the rest
-      require("../assets/images/plants_1.png"),
-      require("../assets/images/plants_2.png"),
-      require("../assets/images/plants_3.png"),
-      require("../assets/images/plants_1.png"),
-      require("../assets/images/plants_2.png"),
-      require("../assets/images/plants_3.png")
+      require("../assets/images/foods/japan/recipe-1/3.jpg"),
+      require("../assets/images/foods/japan/recipe-1/4.jpg"),
+      require("../assets/images/foods/japan/recipe-1/5.jpg"),
+ 
     ]
   }
 ];
 
 const explore = [
+  require("../assets/images/foods/japan/soba-noodles.jpg"),
   require("../assets/images/foods/japan/okinawa-diet.png"),
-  require("../assets/images/foods/japan/miso-and-soba-noodle-soup-with-roasted-tofu-and-royalty-free-image-515742222-1551714797.png"),
   require("../assets/images/foods/japan/chicken-and-vegetable-katsu.png"),
   require("../assets/images/foods/japan/rsz_ramen.png"),
   require("../assets/images/foods/japan/japanese-pancake-FFGF-RCP-600x450.png"),

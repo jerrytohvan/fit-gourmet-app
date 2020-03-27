@@ -65,8 +65,19 @@ class Product extends Component {
               </Text>
             ))}
           </Block>
-          <Text gray light height={22}>
-            {product.description}
+
+          <Text h4 bold>
+            Instructions
+          </Text>
+          <Text gray height={22}>
+            {product.instructions}
+          </Text>
+
+          <Text h4 bold>
+           Ingredients
+          </Text>
+          <Text gray height={22}>
+            {product.ingredients}
           </Text>
 
           <Divider margin={[theme.sizes.padding * 0.9, 0]} />

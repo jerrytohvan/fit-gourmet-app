@@ -70,7 +70,8 @@ export default class Explore extends Component {
     return (
       <TouchableOpacity
         key={`img-${index}`}
-        onPress={() => navigation.navigate("Product")}
+          //pass product id or name to Product page 
+        onPress={() => navigation.navigate("Product", {name: "Japanese Soba Noodles Salad"})}
       >
         <Image
           source={img}

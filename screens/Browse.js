@@ -149,15 +149,15 @@ class Browse extends Component {
     
     const { profile, navigation } = this.props;
     const { categories } = this.state;
+    // const tabs = ["Products", "Inspirations", "Shop"];
     const tabs = ["All", "Healthy", "Inspirations", "Indulge"];
 
     return (
      
       <Block marginTop={theme.sizes.base * 5}>
-        <ScrollView
-           showsVerticalScrollIndicator={false}
-           style={{ paddingVertical: theme.sizes.base * 2 }}
-        >
+
+        <ScrollView>
+
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
            {/* CHANGE USER NAME HERE */}
@@ -173,10 +173,10 @@ class Browse extends Component {
             <Block flex={false} row center space="between" style={styles.headings_white_space}>
                 <Text h3 bold>
                   Recommendations for you
-                  </Text>
-                </Block>
+                </Text>
+              </Block>
 
-              <Block flex={false} row center>
+          <Block flex={false} row center>
             <ScrollView
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: theme.sizes_home.padding }}
@@ -215,11 +215,8 @@ class Browse extends Component {
               </TouchableOpacity>
             ))}
           </Block>
-        </ScrollView>
-       
 
-       {/* Menu Control }
-       {this.renderMenu() */}
+        </ScrollView>
 
       </Block>
     );

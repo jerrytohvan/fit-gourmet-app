@@ -52,13 +52,13 @@ const products = [
 ];
 
 const explore = [
-  // images
-  require("../assets/images/foods/japan/okinawa-diet.jpg"),
-  require("../assets/images/foods/japan/miso-and-soba-noodle-soup-with-roasted-tofu-and-royalty-free-image-515742222-1551714797.jpg"),
-  require("../assets/images/foods/japan/chicken-and-vegetable-katsu.jpg"),
-  require("../assets/images/foods/japan/japanese-pancake-FFGF-RCP-600x450.jpg"),
-  require("../assets/images/foods/japan/shrimp-fritters-f2.jpg"),
-  require("../assets/images/foods/japan/Asian-salmon-700-1.jpg")
+  require("../assets/images/foods/japan/okinawa-diet.png"),
+  require("../assets/images/foods/japan/miso-and-soba-noodle-soup-with-roasted-tofu-and-royalty-free-image-515742222-1551714797.png"),
+  require("../assets/images/foods/japan/chicken-and-vegetable-katsu.png"),
+  require("../assets/images/foods/japan/rsz_ramen.png"),
+  require("../assets/images/foods/japan/japanese-pancake-FFGF-RCP-600x450.png"),
+  require("../assets/images/foods/japan/shrimp-fritters-f2.png"),
+  require("../assets/images/foods/japan/Asian-salmon-700-1.png")
 ];
 
 const profile = {
@@ -114,4 +114,4 @@ const recipes = [
   },
 ]
 
-export { categories, explore, products, profile,recipes};
+export { categories, explore, products, profile, recipes};

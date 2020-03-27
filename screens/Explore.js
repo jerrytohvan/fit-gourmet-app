@@ -20,7 +20,6 @@ export default class Explore extends Component {
   state = {
     searchFocus: new Animated.Value(0.6),
     searchString: null,
-    loading: false
   };
 
   handleSearchFocus(status) {
@@ -66,7 +65,7 @@ export default class Explore extends Component {
     const sizes = Image.resolveAssetSource(img);
     const fullWidth = width - theme.sizes.padding * 2.5;
     const resize = (sizes.width * 100) / fullWidth;
-    const imgWidth = resize > 75 ? fullWidth : sizes.width * 1;
+    const imgWidth = resize > 50 ? fullWidth : sizes.width * 1;
 
     return (
       <TouchableOpacity
@@ -86,7 +85,7 @@ export default class Explore extends Component {
     const mainImage = images[0];
 
     return (
-      <Block style={{ marginBottom: height / 3 }}>
+      <Block style={{ marginBottom: -height/3 }}>
         <TouchableOpacity
           style={[styles.image, styles.mainImage]}
           onPress={() => navigation.navigate("Product")}
@@ -135,6 +134,7 @@ export default class Explore extends Component {
       </Block>
     );
   }
+
 }
 
 Explore.defaultProps = {
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     top: theme.sizes.base / 1.6
   },
   explore: {
-    marginHorizontal: theme.sizes.padding * 1.25
+    marginHorizontal: theme.sizes.padding * 1.25,
   },
   image: {
     minHeight: 100,
@@ -194,4 +194,5 @@ const styles = StyleSheet.create({
     width,
     paddingBottom: theme.sizes.base * 4
   }
-});
+})
+

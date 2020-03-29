@@ -8,6 +8,8 @@ import {
   TouchableOpacity
 } from "react-native";
 import * as Icon from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+
 
 import { Button, Divider, Input, Block, Text } from "../components";
 import { theme, mocks } from "../constants";
@@ -24,6 +26,7 @@ class Product extends Component {
       )
     };
   };
+ 
 
   renderGallery() {
     const { product } = this.props;
@@ -47,14 +50,35 @@ class Product extends Component {
     );
   }
 
+  renderFooter() {
+    const { navigation } = this.props;
+    return (
+      <LinearGradient
+        locations={[0.5, 1]}
+        style={styles.footer}
+        colors={["rgba(255,255,255,0)", "rgba(255,255,255,0.6)"]}
+      >
+        <Button 
+        gradient style={{ width: width / 2.678 }}
+        onPress={() => navigation.navigate("WizardCheckout")}
+        >
+          <Text bold white center>
+            Get Recipe! 
+          </Text>
+        </Button>
+      </LinearGradient>
+    );
+  }
+  
   render() {
     const { product } = this.props;
 
     return (
+      <Block>
       <ScrollView showsVerticalScrollIndicator={false}>
         {this.renderGallery()}
 
-        <Block style={styles.product}>
+        <Block style={styles.product}  margin={[theme.sizes.padding * 4, 0]}>
           <Text h2 bold>
             {product.name}
           </Text>
@@ -105,7 +129,12 @@ class Product extends Component {
             </Block>
           </Block>
         </Block>
+
       </ScrollView>
+
+                {this.renderFooter()}
+
+      </Block>
     );
   }
 }
@@ -137,5 +166,17 @@ const styles = StyleSheet.create({
   more: {
     width: 55,
     height: 55
+  },
+  footer: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+    overflow: "visible",
+    alignItems: "center",
+    justifyContent: "center",
+    height: height * 0.1,
+    width,
+    paddingBottom: theme.sizes.base * 4
   }
 });

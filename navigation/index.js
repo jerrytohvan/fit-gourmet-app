@@ -21,6 +21,7 @@ import Likes from '../screens/Likes';
 import Private from '../screens/Private';
 import Profile from '../screens/Profile';
 import List from '../screens/List';
+import WizardCheckout from '../screens/WizardCheckout';
 
 
 import { theme } from "../constants";
@@ -205,9 +206,8 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
             }
         }
     },
-    Forgot,
-    Explore: {
-        screen: Explore,
+    WizardCheckout: {
+        screen: WizardCheckout,
         navigationOptions: {
             headerStyle: {
                 height: theme.sizes.base * 4,
@@ -228,7 +228,6 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
             }
         }
     },
-    Browse,
     Product: {
         screen: Product,
         navigationOptions: {
@@ -251,6 +250,31 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
             }
         }
     },
+    Explore: {
+        screen: Explore,
+        navigationOptions: {
+            headerStyle: {
+                height: theme.sizes.base * 4,
+                backgroundColor: theme.colors.white, // or 'white
+                borderBottomColor: "transparent",
+                elevation: 0 // for android
+            },
+            headerBackImage: <Image source={require("../assets/icons/back.png")} />,
+            headerBackTitle: " ",
+            headerLeftContainerStyle: {
+                alignItems: "center",
+                marginLeft: theme.sizes.base * 2,
+                paddingRight: theme.sizes.base
+            },
+            headerRightContainerStyle: {
+                alignItems: "center",
+                paddingRight: theme.sizes.base
+            }
+        }
+    },
+    
+    Browse,
+    Forgot,
     Settings,
     List,
     Bookmarks,

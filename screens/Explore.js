@@ -15,7 +15,27 @@ import { theme, mocks } from "../constants";
 
 const { width, height } = Dimensions.get("window");
 
-export default class Explore extends Component {
+class Explore extends Component {
+  static navigationOptions = {
+    // header: null,
+    // headerStyle: {
+    //   height: theme.sizes.base * 4,
+    //   backgroundColor: theme.colors.white, // or 'white
+    //   borderBottomColor: "transparent",
+    //   elevation: 0 // for android
+    // },
+    // headerBackImage: <Image source={require("../assets/icons/back.png")} />,
+    // headerBackTitle: " ",
+    // headerLeftContainerStyle: {
+    //     alignItems: "center",
+    //     marginLeft: theme.sizes.base * 2,
+    //     paddingRight: theme.sizes.base
+    // },
+    // headerRightContainerStyle: {
+    //     alignItems: "center",
+    //     paddingRight: theme.sizes.base
+    // }
+  };
 
   state = {
     searchFocus: new Animated.Value(0.6),
@@ -100,25 +120,12 @@ export default class Explore extends Component {
     );
   }
 
-  renderFooter() {
-    return (
-      <LinearGradient
-        locations={[0.5, 1]}
-        style={styles.footer}
-        colors={["rgba(255,255,255,0)", "rgba(255,255,255,0.6)"]}
-      >
-        <Button gradient style={{ width: width / 2.678 }}>
-          <Text bold white center>
-            Filter
-          </Text>
-        </Button>
-      </LinearGradient>
-    );
-  }
+
 
   render() {
     const { navigation } = this.props;
     return (
+      
       <Block>
         <Block flex={false} row center space="between" style={styles.header}>
           <Text h1 bold>
@@ -131,12 +138,13 @@ export default class Explore extends Component {
           {this.renderExplore()}
         </ScrollView>
 
-        {this.renderFooter()}
       </Block>
     );
   }
 
 }
+
+export default Explore;
 
 Explore.defaultProps = {
   images: mocks.explore
@@ -145,7 +153,8 @@ Explore.defaultProps = {
 const styles = StyleSheet.create({
   header: {
     paddingHorizontal: theme.sizes.base * 2,
-    paddingBottom: theme.sizes.base * 2
+    paddingBottom: theme.sizes.base * 2,
+    // paddingTop: theme.sizes.base * 8
   },
   search: {
     height: theme.sizes.base * 2,
@@ -182,18 +191,6 @@ const styles = StyleSheet.create({
   mainImage: {
     minWidth: width - theme.sizes.padding * 2.5,
     minHeight: width - theme.sizes.padding * 2.5
-  },
-  footer: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-    left: 0,
-    overflow: "visible",
-    alignItems: "center",
-    justifyContent: "center",
-    height: height * 0.1,
-    width,
-    paddingBottom: theme.sizes.base * 4
   }
 })
 

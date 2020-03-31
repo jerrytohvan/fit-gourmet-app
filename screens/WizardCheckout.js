@@ -23,6 +23,26 @@ const { width, height } = Dimensions.get("window");
 
 import Counter from "react-native-counters";
 
+const steak_icon = require('../assets/icons/svg/steak.svg');
+const fish_icon = require('../assets/icons/svg/fish.svg');
+const brocolli_icon = require('../assets/icons/svg/broccoli.svg');
+const cabbage_icon = require('../assets/icons/svg/cabbage.svg');
+const tomato_icon = require('../assets/icons/svg/tomato.svg');
+const carrot_icon = require('../assets/icons/svg/carrot.svg');
+const heart_icon = require('../assets/icons/svg/heart.svg');
+const bread_icon =  require('../assets/icons/svg/bread-1.svg');
+const pork_icon = require('../assets/icons/svg/pork.svg');
+const meat_icon = require('../assets/icons/svg/meat-1.svg');
+const nuts_icon = require('../assets/icons/svg/pistachio.svg');
+const milk_icon = require('../assets/icons/svg/milk.svg');
+const beans_icon = require('../assets/icons/svg/beans.svg');
+const egg_icon = require('../assets/icons/svg/egg.svg');
+const oat_icon = require('../assets/icons/svg/oat.svg');
+
+
+
+
+
 
 // https://www.robinwieruch.de/react-state-array-add-update-remove
 // https://github.com/tsepeti/react-native-counters
@@ -33,7 +53,6 @@ class WizardCheckout extends Component {
     lowcal: "",
     lowcarb: "",
     price: "free",
-    // allergies: "",
     pork: "",
     red_meat: "",
     shellfish: "",
@@ -44,6 +63,8 @@ class WizardCheckout extends Component {
     wheat: "",
     pax: 2
   }
+  
+  //Declare images
 
 
   renderSubmitButton() {
@@ -56,10 +77,10 @@ class WizardCheckout extends Component {
       >
         <Button 
         gradient style={{ width: width / 2.678 }}
-        onPress={() => navigation.navigate("WizardCheckout")}
+        onPress={() => navigation.navigate("ShoppingCart")}
         >
           <Text bold white center>
-            Get Recipe! 
+            Checkout
           </Text>
         </Button>
       </LinearGradient>
@@ -71,6 +92,7 @@ class WizardCheckout extends Component {
     var activeType = key => this.state.type === key;
 
 
+    
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.container}>
@@ -96,27 +118,21 @@ class WizardCheckout extends Component {
                 onPress={() => this.setState({ meal: "omnivore" })}
               >
                 <View style={{ flexDirection: "row" }}>
-                  <FontAwesome5
-                    name="drumstick-bite"
-                    size={20}
-                    color={
-                      this.state.meal === "omnivore" ? "#FFF" : "#FF7657"
-                    }
-                  />
-                  <FontAwesome5
-                    name="fish"
-                    size={20}
-                    color={
-                      this.state.meal === "omnivore" ? "#FFF" : "#FFBA5A"
-                    }
-                  />
-                  <FontAwesome5
-                    name="seedling"
-                    size={20}
-                    color={
-                      this.state.meal === "omnivore" ? "#FFF" : "#FF7657"
-                    }
-                  />
+                <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={steak_icon} 
+                />
+                 <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={fish_icon} 
+                />
+                  <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={brocolli_icon} 
+                />
                 </View>
                 <Text
                   style={[
@@ -135,20 +151,18 @@ class WizardCheckout extends Component {
                 onPress={() => this.setState({ meal: "pescatarian" })}
               >
                 <View style={{ flexDirection: "row" }}>
-                 <FontAwesome5
-                    name="fish"
-                    size={20}
-                    color={
-                      this.state.meal === "pescatarian" ? "#FFF" : "#FF7657"
-                    }
-                  />
-                  <FontAwesome5
-                    name="seedling"
-                    size={20}
-                    color={
-                      this.state.meal === "pescatarian" ? "#FFF" : "#FFBA5A"
-                    }
-                  />
+                
+                  <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={fish_icon} 
+                />
+                  <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={brocolli_icon} 
+                />
+                 
                  </View>
                  
                 <Text
@@ -157,6 +171,8 @@ class WizardCheckout extends Component {
                     this.state.meal === "pescatarian" ? styles.activeText : null
                   ]}
                 >
+                 
+                 
                   Pescatarian
                 </Text>
               </TouchableOpacity>
@@ -170,20 +186,22 @@ class WizardCheckout extends Component {
               >
 
                 <View style={{ flexDirection: "row" }}>
-                 <FontAwesome5
-                    name="seedling"
-                    size={20}
-                    color={
-                      this.state.meal === "vegetarian" ? "#FFF" : "#FF7657"
-                    }
-                  />
-                  <FontAwesome5
-                    name="carrot"
-                    size={20}
-                    color={
-                      this.state.meal === "vegetarian" ? "#FFF" : "#FFBA5A"
-                    }
-                  />
+                <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={cabbage_icon} 
+                />
+                <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={carrot_icon} 
+                />
+
+                 <SvgUri 
+                  width="20" 
+                  height="20" 
+                  source={tomato_icon} 
+                />
                  </View>
                  
                 <Text
@@ -215,13 +233,13 @@ class WizardCheckout extends Component {
                    this.setState({ lowcal: "" }) : this.setState({ lowcal: "low-calories" })  
                   }
               >
-                 <FontAwesome5
-                    name="heartbeat"
-                    size={20}
-                    color={
-                      this.state.lowcal === "low-calories" ? "#FFF" : "#FF7657"
-                    }
-                  />
+             
+
+                <SvgUri 
+                  width="30" 
+                  height="30" 
+                  source={heart_icon} 
+                />
                 <Text
                   style={[
                     styles.buttonText,
@@ -246,13 +264,14 @@ class WizardCheckout extends Component {
                   this.setState({ lowcarb: "" }) : this.setState({ lowcarb: "low-carbs" })  
                 }
               >
-                 <FontAwesome5
-                    name="bread-slice"
-                    size={20}
-                    color={
-                      this.state.lowcarb === "low-carbs" ? "#FFF" : "#FF7657"
-                    }
-                  />
+            
+
+                <SvgUri 
+                width="40" 
+                height="40" 
+                source={bread_icon} 
+
+                />
                 <Text
                   style={[
                     styles.buttonText,
@@ -293,7 +312,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="40" 
                 height="40" 
-                source={require('../assets/icons/svg/pork.svg')} 
+                source={pork_icon} 
 
                 />
 
@@ -328,7 +347,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/meat-1.svg')} 
+                source={meat_icon} 
               />
           
                  
@@ -361,7 +380,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/pistachio.svg')} 
+                source={nuts_icon} 
               />
           
           
@@ -394,7 +413,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/milk.svg')} 
+                source={milk_icon} 
               />
           
           
@@ -427,7 +446,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/beans.svg')} 
+                source={beans_icon} 
               />
           
                 <Text
@@ -458,7 +477,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/egg.svg')} 
+                source={egg_icon} 
               />
           
                 <Text
@@ -490,7 +509,7 @@ class WizardCheckout extends Component {
               <SvgUri 
                 width="30" 
                 height="30" 
-                source={require('../assets/icons/svg/oat.svg')} 
+                source={oat_icon} 
               />
           
                 <Text
@@ -513,15 +532,15 @@ class WizardCheckout extends Component {
             <View style={{flex:1,        justifyContent: 'center',
  flexDirection:'row-reverse'}}>
             <Counter buttonStyle={{
-                  borderColor: '#FF7657',
+                  borderColor: '#A4CD8C',
                   borderWidth: 2,
                   borderRadius: 30
                 }}
                 buttonTextStyle={{
-                  color: '#FF7657',
+                  color: '#A4CD8C',
                 }}
                 countTextStyle={{
-                  color: '#FF7657',
+                  color: '#A4CD8C',
                 }}
 
                 start={ this.state.pax}  />
@@ -532,9 +551,6 @@ class WizardCheckout extends Component {
              {this.renderSubmitButton()}
           </View>
             
-
-
-          
         </ScrollView>
       </SafeAreaView>
     );
@@ -575,7 +591,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 14,
     marginBottom: 14,
     paddingBottom: 24,
-    borderBottomColor: "#EAEAED",
+    borderBottomColor: "#A4CD8C",
     borderBottomWidth: 1
   },
   title: {
@@ -586,7 +602,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#FF7657",
+    borderColor: "#A4CD8C",
     justifyContent: "space-between"
   },
   button: {
@@ -600,7 +616,7 @@ const styles = StyleSheet.create({
     fontWeight: "500"
   },
   active: {
-    backgroundColor: "#FF7657"
+    backgroundColor: "#A4CD8C"
   },
   activeText: {
     color: "#FFF"

@@ -21,7 +21,6 @@ import Octicons from 'react-native-vector-icons/Octicons';
 const { width } = Dimensions.get("window");
 
 
-
 class Browse extends Component {
   state = {
     active: "All",
@@ -101,11 +100,14 @@ class Browse extends Component {
         <ImageBackground
           style={[styles.flex, styles.destination, styles.shadow]}
           imageStyle={{ borderRadius: theme.sizes_home.radius }}
-          source={{ uri: item.preview }}
+          // source={{ uri: item.preview }}
+          source={ item.preview}
         >
           <View style={[styles.row, { justifyContent: 'space-between' }]}>
             <View style={{ flex: 0 }}>
-              <Image source={{ uri: item.user.avatar }} style={styles.avatar} />
+              {/* <Image source={{ uri: item.user.avatar }} style={styles.avatar} /> */}
+              <Image source={ item.user.avatar } style={styles.avatar} />
+
             </View>
             <View style={[styles.column, { flex: 2, paddingHorizontal: theme.sizes_home.padding / 2 }]}>
               <Text style={{ color: theme.colors_home.white, fontWeight: 'bold' }}>{item.user.name}</Text>

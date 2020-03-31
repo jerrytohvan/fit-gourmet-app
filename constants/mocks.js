@@ -73,13 +73,130 @@ const profile = {
   newsletter: false
 };
 
+const sesame = require('../assets/icons/groceries/sesame.png');
+const rice_vinegar = require('../assets/icons/groceries/rice-vinegar.png');
+const avocado = require('../assets/icons/groceries/avocado.png');
+const lemon = require('../assets/icons/groceries/lemon.png');
+const edamame = require('../assets/icons/groceries/edamame.png');
+const sesame_snaps = require('../assets/icons/groceries/sesame-snaps.png');
+const red_radish = require('../assets/icons/groceries/red-radish.jpg');
+const mint = require('../assets/icons/groceries/fresh-mints.jpg');
+const tamari = require('../assets/icons/groceries/tamari.png');
+const sesame_oil = require('../assets/icons/groceries/sesame-oil.png');
+const ginger = require('../assets/icons/groceries/ginger.png');
+const garlic = require('../assets/icons/groceries/garlic.png');
+const honey = require('../assets/icons/groceries/honey.png');
+const soba = require('../assets/icons/groceries/soba.png');
+
+
+const gordon_ramsay = require('../assets/images/gordon_ramsay.jpg');
+const grilled_salmon = require('../assets/images/grilled_salmon.png');
+const jamie_oliver = require('../assets/images/jamie_oliver.jpg');
+const seafood_rissoto = require('../assets/images/seafood_rissoto.jpg');
+
+const groceries = [
+  {
+    id: 1,
+    image: sesame,
+    name: 'Kewpie Roasted Sesame Dressing (210 ml)',
+    price: 5.8,
+    amountTaken: 1
+  }, {
+    id: 2,
+    image: rice_vinegar,
+    name: 'Narcissus Rice Vinegar (600 g)',
+    price: 1.35,
+    amountTaken: 1
+  }, {
+    id: 3,
+    image: avocado,
+    name: 'Prime Asia Avocados (3 per pack)',
+    price: 4.95,
+    amountTaken: 1
+  }, {
+    id: 4,
+    image: lemon,
+    name: 'Citrus Jumbo Yellow Lemons (2 per Pack)',
+    price: 1.85,
+    amountTaken: 3
+  }, {
+    id: 5,
+    image: edamame,
+    name: 'SunnyFarm Edamame (400 g)',
+    price: 2.4,
+    amountTaken: 1
+  }, 
+  {
+    id: 6,
+    image: sesame_snaps,
+    name: 'Sesame Snaps (30 g)',
+    price: 2.4,
+    amountTaken: 2,
+  }, 
+  {
+    id: 7,
+    image: red_radish,
+    name: 'Red Radish (200 g)',
+    price: 3,
+    amountTaken: 1
+  }, 
+  {
+    id: 8,
+    image: mint,
+    name: 'Fresh Mints (50 g)',
+    price: 1.5,
+    amountTaken: 1
+  }, 
+  {
+    id: 9,
+    image: tamari,
+    name: 'Simply Natural Organic Tamari Sauce (370 ml)',
+    price: 7.5,
+    amountTaken: 1
+  }, 
+  {
+    id: 10,
+    image: sesame_oil,
+    name: 'Double Pagoda 100% Pure Sesame Oil (150 ml)',
+    price: 3,
+    amountTaken: 1
+  }, 
+  {
+    id: 11,
+    image: ginger,
+    name: 'GIVVO Old Ginger (200 g)',
+    price: 1.9,
+    amountTaken: 1
+  }, 
+  {
+    id: 12,
+    image: garlic,
+    name: 'White Whole Garlic (200 g)',
+    price: 1.35,
+    amountTaken: 1
+  }, 
+  {
+    id: 13,
+    image: honey,
+    name: 'Polleney Pure Honey (200 g)',
+    price: 2.85,
+    amountTaken: 1
+  }, 
+  {
+    id: 14,
+    image: soba,
+    name: 'Tanabiki Seimen Japanese Soba Noodles (200 g)',
+    price: 2.5,
+    amountTaken: 1
+  }, 
+]
 
 const recipes = [
     {
       id: 1,
       user: {
         name: 'Gordon Ramsay',
-        avatar: 'https://yt3.ggpht.com/a/AGF-l7_6r_NR0iZWw6Tm_eDIiYy35mIUoPqKPUCfgw=s900-c-k-c0xffffffff-no-rj-mo',
+        avatar: gordon_ramsay,
       },
       saved: true,
       location: 'Western, Pescetarian',
@@ -88,17 +205,16 @@ const recipes = [
       description: 'This is the best grilled salmon recipe! The marinade makes the fish so flavorful and it’s ridiculously easy to make! It’s going to become your go-to salmon recipe!',
       rating: 4.6,
       reviews: 231,
-      preview: 'https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-GRILLED-SALMON-WITH-GARLIC-MUSHROOM-AND-LENTIL-SALAD.png',
+      preview: grilled_salmon,
       images: [
-        'https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-GRILLED-SALMON-WITH-GARLIC-MUSHROOM-AND-LENTIL-SALAD.png',
-  
+        grilled_salmon,
       ]
     },
     {
     id: 2,
     user: {
       name: 'Jamie Oliver',
-      avatar: 'https://food.konbini.com/files/2016/07/jo2-1-810x810.jpg',
+      avatar: jamie_oliver,
     },
     saved: true,
     location: 'Italian, Pescetarian',
@@ -107,12 +223,14 @@ const recipes = [
     description: 'Perfect for the weekend, this amazing risotto will blow everyone away. Slow-roasting the tomatoes transforms them into incredibly sweet, vibrant bombs of goodness that will explode in your mouth, while the combination of delicate seafood is a real treat. An utterly decadent dish, but totally worth it.',
     rating: 4.3,
     reviews: 12,
-    preview: 'https://thesauce.atbbq.com/wp-content/uploads/2017/08/cooking-with-fire-seafood-risotto-recipe.jpg',
+    preview: seafood_rissoto,
     images: [
-      'https://thesauce.atbbq.com/wp-content/uploads/2017/08/cooking-with-fire-seafood-risotto-recipe.jpg',
+      seafood_rissoto,
 
     ]
   },
 ]
 
-export { categories, explore, products, profile, recipes};
+
+
+export { categories, explore, products, profile, recipes, groceries};

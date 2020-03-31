@@ -23,6 +23,7 @@ import Profile from '../screens/Profile';
 import List from '../screens/List';
 import WizardCheckout from '../screens/WizardCheckout';
 import ShoppingCart from '../screens/ShoppingCart';
+import Payment from '../screens/Payment';
 
 import { theme } from "../constants";
 
@@ -274,6 +275,28 @@ const BaseNavigatorContainer = createAppContainer(createStackNavigator({
     },
     ShoppingCart: {
         screen: ShoppingCart,
+        navigationOptions: {
+            headerStyle: {
+                height: theme.sizes.base * 4,
+                backgroundColor: theme.colors.white, // or 'white
+                borderBottomColor: "transparent",
+                elevation: 0 // for android
+            },
+            headerBackImage: <Image source={require("../assets/icons/back.png")} />,
+            headerBackTitle: " ",
+            headerLeftContainerStyle: {
+                alignItems: "center",
+                marginLeft: theme.sizes.base * 2,
+                paddingRight: theme.sizes.base
+            },
+            headerRightContainerStyle: {
+                alignItems: "center",
+                paddingRight: theme.sizes.base
+            }
+        }
+    },
+    Payment:{
+        screen: Payment,
         navigationOptions: {
             headerStyle: {
                 height: theme.sizes.base * 4,

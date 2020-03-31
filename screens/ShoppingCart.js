@@ -132,7 +132,7 @@ class ShoppingCart extends Component {
     return (
       <Block middle flex={1} margin={[0, theme.sizes.padding * 2]}>
 
-        <Button gradient onPress={() => navigation.navigate("Login")}>
+        <Button gradient onPress={() => navigation.navigate("Payment")}>
             <Text center semibold white>
               Proceed to Payment
             </Text>

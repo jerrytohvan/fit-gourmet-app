@@ -5,22 +5,20 @@ import {
   StyleSheet,
   Dimensions,
   SafeAreaView,
-  View,
-  FlatList, 
-  Image,
   ActivityIndicator,
   Keyboard,
   KeyboardAvoidingView,
-  
+  Picker,
+  View
 } from "react-native";
-
 
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
 const { width, height } = Dimensions.get("window");
 
-import { CreditCardInput, LiteCreditCardInput } from "react-native-credit-card-input";
+
+import { CreditCardInput } from "react-native-credit-card-input";
 
 //https://github.com/sbycrosz/react-native-credit-card-input
 
@@ -31,13 +29,15 @@ class Payment extends Component {
     mobile: "",
     country: "",
     city: "",
+    zip: "",
     errors: [],
     loading: false
   };
+  
 
   handleForm() {
     const { navigation } = this.props;
-    const { name, address, mobile, country, city } = this.state;
+    const { name, address, mobile, country, city,zip } = this.state;
     const errors = [];
 
     Keyboard.dismiss();
@@ -58,6 +58,10 @@ class Payment extends Component {
     if (city === "") {
       errors.push("city");
     }
+    if (zip === "") {
+      errors.push("zip");
+    }
+
 
     if (mobile === "") {
       errors.push("mobile");
@@ -75,8 +79,10 @@ class Payment extends Component {
     const { navigation } = this.props;
     const { loading, errors } = this.state;
     const hasErrors = key => (errors.includes(key) ? styles.hasErrors : null);
-
-    return (<KeyboardAvoidingView style={styles.login} behavior="padding">
+    
+  
+    return (
+    <KeyboardAvoidingView style={styles.login} behavior="padding">
         <Block padding={[0, theme.sizes.base * 2]}>
           <Block middle>
           <Text h2 bold>
@@ -97,6 +103,7 @@ class Payment extends Component {
               // defaultValue={this.state.name}
               onChangeText={text => this.setState({ address: text })}
             />
+    
 
             <Input
               label="Country"
@@ -112,6 +119,13 @@ class Payment extends Component {
               style={[styles.input, hasErrors("city")]}
               // defaultValue={this.state.name}
               onChangeText={text => this.setState({ city: text })}
+            />  
+            <Input
+              label="Zipcode"
+              error={hasErrors("zip")}
+              style={[styles.input, hasErrors("zip")]}
+              // defaultValue={this.state.name}
+              onChangeText={text => this.setState({ zip: text })}
             />  
 
       
@@ -201,4 +215,5 @@ const styles = StyleSheet.create({
   hasErrors: {
     borderBottomColor: theme.colors.accent
   }
+  
 });

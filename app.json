@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fit-gourmet",
-    "slug": "fit-gourmet",
+    "name": "fit-gourmet-app-v1",
+    "slug": "fit-gourmet-app-v1",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/jerrytohvan/fit-gourmet-app"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "name": "cs-spm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "is-json": "^2.0.1",
+    "mongoose": "^5.8.10",
+    "nodemon": "^2.0.2",
+    "promises": "^0.2.5",
+    "request": "^2.88.0",
+    "stripe": "^8.38.0"
+  }
+}
